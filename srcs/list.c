@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:29 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/01 at 11:44:30 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/03 at 00:25:04 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "list.h"
@@ -48,7 +48,7 @@ void	list_pushFront(list_t *lst, node_t *node) {
 		++lst->size;
 		return ;
 	}
-	node->next = list_begin(lst);
+	node->ptr = list_begin(lst);
 	lst->begin = node;
 	++lst->size;
 }
@@ -60,7 +60,7 @@ void	list_pushBack(list_t *lst, node_t *node) {
 		++lst->size;
 		return ;
 	}
-	lst->end->next = node;
+	lst->end->ptr = node;
 	lst->end = node;
 	++lst->size;
 }
@@ -81,7 +81,7 @@ inline node_t	*list_end(list_t *lst) {
 }
 
 inline node_t	*list_next(node_t *node) {
-	return node->next;
+	return node->ptr;
 }
 
 void	list_iter(list_t *lst, void (fct)(node_t *)) {
