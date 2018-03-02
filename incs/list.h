@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:24 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/01 at 11:44:44 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/03 at 00:15:43 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef LIST_H
@@ -44,7 +44,7 @@ void	list_swapTwo(node_t *, node_t *, void (*)(node_t *, node_t *));
 node_t	*list_begin(list_t *);
 node_t	*list_end(list_t *);
 node_t	*list_next(node_t *);
-void	list_iter(list_t *lst, void (*)(node_t *));
+void	list_iter(list_t *, void (*)(node_t *));
 void	list_iter_reverse(node_t *, void (*)(node_t *));
 
 #endif
