@@ -13,10 +13,10 @@
 * GNU Lesser General Public License for more details.
 *
 * You should have received a copy of the GNU Lesser General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>
+* along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:27 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/03 at 03:11:25 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/03 at 17:51:20 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "list.h"
