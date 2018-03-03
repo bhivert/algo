@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:27 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/03 at 00:09:35 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/03 at 03:11:25 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "list.h"
@@ -78,9 +78,9 @@ int main(int ac, char *av[]) {
 	printf("]\nlist iter pb[");
 	list_iter(&pb, (void(*)(node_t *))&print);
 	printf("]\nlist iter reverse pf[");
-	list_iter_reverse(list_begin(&pf), (void(*)(node_t *))&print);
+	list_iterReverse(list_begin(&pf), (void(*)(node_t *))&print);
 	printf("]\nlist iter reverse pb[");
-	list_iter_reverse(list_begin(&pb), (void(*)(node_t *))&print);
+	list_iterReverse(list_begin(&pb), (void(*)(node_t *))&print);
 	printf("]\n");
 	ac = list_size(&pf) / 2 + list_size(&pf) % 2;
 	printf("list pop front x %d\n", ac - 1);
@@ -94,9 +94,9 @@ int main(int ac, char *av[]) {
 	printf("]\nlist iter pb[");
 	list_iter(&pb, (void(*)(node_t *))&print);
 	printf("]\nlist iter reverse pf[");
-	list_iter_reverse(list_begin(&pf), (void(*)(node_t *))&print);
+	list_iterReverse(list_begin(&pf), (void(*)(node_t *))&print);
 	printf("]\nlist iter reverse pb[");
-	list_iter_reverse(list_begin(&pb), (void(*)(node_t *))&print);
+	list_iterReverse(list_begin(&pb), (void(*)(node_t *))&print);
 	printf("]\n");
 	while (list_size(&pb)) {
 		list_popFront(&pf);
