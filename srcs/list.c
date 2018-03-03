@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:29 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/03 at 00:25:04 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/03 at 01:48:02 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "list.h"
@@ -90,9 +90,9 @@ void	list_iter(list_t *lst, void (fct)(node_t *)) {
 	}
 }
 
-void	list_iter_reverse(node_t *node, void (fct)(node_t *)) {
+void	list_iterReverse(node_t *node, void (fct)(node_t *)) {
 	if (!node) return ;
-	list_iter_reverse(list_next(node), fct);
+	list_iterReverse(list_next(node), fct);
 	fct(node);
 }
 
