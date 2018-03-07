@@ -16,7 +16,7 @@
 # along with this project. If not, see <http://www.gnu.org/licenses/>
 #
 # Created on 2018/02/28 at 19:56:53 by Benoit Hivert <hivert.benoit@gmail.com>
-# Updated on 2018/03/03 at 17:52:02 by Benoit Hivert <hivert.benoit@gmail.com>
+# Updated on 2018/03/07 at 14:53:25 by Benoit Hivert <hivert.benoit@gmail.com>
 ##
 
 .PHONY: all, clean, fclean, re, _make, _make_clean, _make_fclean
@@ -44,7 +44,8 @@ INCS_FLAGS	=	-Iincs \
 SUB_MAKE	=	
 
 SRCS_DIR	=	srcs
-SRCS_SRCS	=	$(SRCS_DIR)/list.c \
+SRCS_SRCS	=	$(SRCS_DIR)/lifo.c \
+				$(SRCS_DIR)/list.c \
 
 SRCS		=	$(SRCS_SRCS) \
 
