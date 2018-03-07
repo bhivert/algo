@@ -16,15 +16,15 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:24 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 01:04:01 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 01:31:59 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef LIST_H
 # define LIST_H
 
-# include "node.h"
 # include <stdlib.h>
 
+typedef struct _node_t	node_t;
 typedef struct	_list_t {
 	size_t	size;
 	node_t	*head;

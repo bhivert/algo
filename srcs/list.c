@@ -16,10 +16,11 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:29 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 01:03:25 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 01:32:49 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "list.h"
+#include "node.h"
 
 // list utils
 
