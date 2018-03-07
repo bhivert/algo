@@ -16,7 +16,7 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/03/07 at 01:19:36 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 14:01:33 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 17:54:09 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "node.h"
@@ -38,7 +38,7 @@ node_t	*lifo_pop(lifo_t *lifo) {
 	node_t	*tmp = lifo_begin(lifo);
 	lifo->head = tmp->ptr;
 	--lifo->size;
-	return tmp;;
+	return tmp;
 }
 
 void	lifo_push(lifo_t *lifo, node_t *node) {
