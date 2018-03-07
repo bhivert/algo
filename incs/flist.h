@@ -1,5 +1,5 @@
 /*
-* list.h is part of a project.
+* flist.h is part of a project.
 * Copyright (C) 2018 Benoit Hivert <hivert.benoit@gmail.com>
 *
 * This project is free software: you can redistribute it and/or modify
@@ -16,32 +16,32 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:24 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 01:31:59 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 18:50:01 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
-#ifndef LIST_H
-# define LIST_H
+#ifndef FLIST_H
+# define FLIST_H
 
 # include <stdlib.h>
 
 typedef struct _node_t	node_t;
-typedef struct	_list_t {
+typedef struct	_flist_t {
 	size_t	size;
 	node_t	*head;
 	node_t	*tail;
-} list_t;
+} flist_t;
 
-// list utils
-void	list_clear(list_t *);
-size_t	list_size(list_t *);
-// list handling
-node_t	*list_popFront(list_t *);
-void	list_pushFront(list_t *, node_t *);
-void	list_pushBack(list_t *, node_t *);
-// list iterators
-node_t	*list_begin(list_t *);
-node_t	*list_end(list_t *);
-node_t	*list_next(node_t *);
-void	list_iter(list_t *, void (*)(node_t *));
+// flist utils
+void	flist_clear(flist_t *);
+size_t	flist_size(flist_t *);
+// flist handling
+node_t	*flist_popFront(flist_t *);
+void	flist_pushFront(flist_t *, node_t *);
+void	flist_pushBack(flist_t *, node_t *);
+// flist iterators
+node_t	*flist_begin(flist_t *);
+node_t	*flist_end(flist_t *);
+node_t	*flist_next(node_t *);
+void	flist_iter(flist_t *, void (*)(node_t *));
 
 #endif

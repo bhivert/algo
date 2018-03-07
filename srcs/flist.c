@@ -1,5 +1,5 @@
 /*
-* list.c is part of a project.
+* flist.c is part of a project.
 * Copyright (C) 2018 Benoit Hivert <hivert.benoit@gmail.com>
 *
 * This project is free software: you can redistribute it and/or modify
@@ -16,44 +16,44 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:29 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 01:32:49 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 18:50:34 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
-#include "list.h"
+#include "flist.h"
 #include "node.h"
 
-// list utils
+// flist utils
 
-inline void	list_clear(list_t *lst) {
-	*lst = (list_t){0, NULL, NULL};
+inline void	flist_clear(flist_t *lst) {
+	*lst = (flist_t){0, NULL, NULL};
 }
 
-inline size_t	list_size(list_t *lst) {
+inline size_t	flist_size(flist_t *lst) {
 	return lst->size;
 }
 
-// list handling
+// flist handling
 
-node_t	*list_popFront(list_t *lst) {
-	node_t	*tmp = list_begin(lst);
-	lst->head = list_next(tmp);
-	if (lst->head == list_end(lst))
-		lst->tail = list_end(lst);
+node_t	*flist_popFront(flist_t *lst) {
+	node_t	*tmp = flist_begin(lst);
+	lst->head = flist_next(tmp);
+	if (lst->head == flist_end(lst))
+		lst->tail = flist_end(lst);
 	--lst->size;
 	return tmp;
 }
 
-void	list_pushFront(list_t *lst, node_t *node) {
-	node->ptr = list_begin(lst);
+void	flist_pushFront(flist_t *lst, node_t *node) {
+	node->ptr = flist_begin(lst);
 	lst->head = node;
-	if (lst->tail == list_end(lst))
+	if (lst->tail == flist_end(lst))
 		lst->head = node;
 	++lst->size;
 }
 
-void	list_pushBack(list_t *lst, node_t *node) {
-	node->ptr = list_end(lst);
-	if (lst->head == list_end(lst)) {
+void	flist_pushBack(flist_t *lst, node_t *node) {
+	node->ptr = flist_end(lst);
+	if (lst->head == flist_end(lst)) {
 		lst->head = node;
 		lst->tail = node;
 		++lst->size;
@@ -64,23 +64,23 @@ void	list_pushBack(list_t *lst, node_t *node) {
 	++lst->size;
 }
 
-// list iterators
+// flist iterators
 
-inline node_t	*list_begin(list_t *lst) {
+inline node_t	*flist_begin(flist_t *lst) {
 	return lst->head;
 }
 
-inline node_t	*list_end(list_t *lst) {
+inline node_t	*flist_end(flist_t *lst) {
 	(void)lst;
 	return NULL;
 }
 
-inline node_t	*list_next(node_t *node) {
+inline node_t	*flist_next(node_t *node) {
 	return node->ptr;
 }
 
-void	list_iter(list_t *lst, void (fct)(node_t *)) {
-	for (node_t *node = list_begin(lst); node != list_end(lst); node = list_next(node)) {
+void	flist_iter(flist_t *lst, void (fct)(node_t *)) {
+	for (node_t *node = flist_begin(lst); node != flist_end(lst); node = flist_next(node)) {
 		fct(node);
 	}
 }

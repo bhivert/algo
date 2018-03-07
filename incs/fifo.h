@@ -16,7 +16,7 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/03/06 at 23:58:41 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 14:22:38 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 18:51:48 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef FIFO_H
@@ -25,7 +25,7 @@
 # include <stdlib.h>
 
 typedef struct _node_t	node_t;
-typedef struct _list_t	fifo_t;
+typedef struct _flist_t	fifo_t;
 
 // fifo utils
 void	fifo_clear(fifo_t *);
