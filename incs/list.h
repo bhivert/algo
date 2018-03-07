@@ -16,20 +16,19 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:24 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/03 at 17:49:30 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 01:04:01 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef LIST_H
 # define LIST_H
 
+# include "node.h"
 # include <stdlib.h>
-
-typedef struct _node_t	node_t;
 
 typedef struct	_list_t {
 	size_t	size;
-	node_t	*begin;
-	node_t	*end;
+	node_t	*head;
+	node_t	*tail;
 } list_t;
 
 // list utils
@@ -39,12 +38,10 @@ size_t	list_size(list_t *);
 node_t	*list_popFront(list_t *);
 void	list_pushFront(list_t *, node_t *);
 void	list_pushBack(list_t *, node_t *);
-void	list_swapTwo(node_t *, node_t *, void (*)(node_t *, node_t *));
 // list iterators
 node_t	*list_begin(list_t *);
 node_t	*list_end(list_t *);
 node_t	*list_next(node_t *);
 void	list_iter(list_t *, void (*)(node_t *));
-void	list_iterReverse(node_t *, void (*)(node_t *));
 
 #endif

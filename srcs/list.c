@@ -16,11 +16,10 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/02/28 at 19:50:29 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/03 at 17:50:50 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 01:03:25 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #include "list.h"
-#include "node.h"
 
 // list utils
 
@@ -36,43 +35,38 @@ inline size_t	list_size(list_t *lst) {
 
 node_t	*list_popFront(list_t *lst) {
 	node_t	*tmp = list_begin(lst);
-	lst->begin = list_next(tmp);
+	lst->head = list_next(tmp);
+	if (lst->head == list_end(lst))
+		lst->tail = list_end(lst);
 	--lst->size;
 	return tmp;
 }
 
 void	list_pushFront(list_t *lst, node_t *node) {
-	if (!list_size(lst)) {
-		lst->begin = node;
-		lst->end = node;
-		++lst->size;
-		return ;
-	}
 	node->ptr = list_begin(lst);
-	lst->begin = node;
+	lst->head = node;
+	if (lst->tail == list_end(lst))
+		lst->head = node;
 	++lst->size;
 }
 
 void	list_pushBack(list_t *lst, node_t *node) {
-	if (!list_size(lst)) {
-		lst->begin = node;
-		lst->end = node;
+	node->ptr = list_end(lst);
+	if (lst->head == list_end(lst)) {
+		lst->head = node;
+		lst->tail = node;
 		++lst->size;
 		return ;
 	}
-	lst->end->ptr = node;
-	lst->end = node;
+	lst->tail->ptr = node;
+	lst->tail = node;
 	++lst->size;
-}
-
-void	list_swapTwo(node_t *node0, node_t *node1, void (fct)(node_t *, node_t *)) {
-	fct(node0, node1);
 }
 
 // list iterators
 
 inline node_t	*list_begin(list_t *lst) {
-	return lst->begin;
+	return lst->head;
 }
 
 inline node_t	*list_end(list_t *lst) {
@@ -85,14 +79,7 @@ inline node_t	*list_next(node_t *node) {
 }
 
 void	list_iter(list_t *lst, void (fct)(node_t *)) {
-	for (node_t *node = list_begin(lst); node; node = list_next(node)) {
+	for (node_t *node = list_begin(lst); node != list_end(lst); node = list_next(node)) {
 		fct(node);
 	}
 }
-
-void	list_iterReverse(node_t *node, void (fct)(node_t *)) {
-	if (!node) return ;
-	list_iterReverse(list_next(node), fct);
-	fct(node);
-}
-
