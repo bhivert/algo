@@ -16,7 +16,7 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/03/07 at 01:21:02 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 14:00:04 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/07 at 18:53:06 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef LIFO_H
@@ -41,7 +41,5 @@ node_t	*lifo_begin(lifo_t *);
 node_t	*lifo_end(lifo_t *);
 node_t	*lifo_next(node_t *);
 void	lifo_iter(lifo_t *, void (*)(node_t *));
-// TBI
-// insertion sort
 
 #endif
