@@ -1,5 +1,5 @@
 /*
-* flist.h is part of a project.
+* bnode.h is part of a project.
 * Copyright (C) 2018 Benoit Hivert <hivert.benoit@gmail.com>
 *
 * This project is free software: you can redistribute it and/or modify
@@ -15,33 +15,15 @@
 * You should have received a copy of the GNU Lesser General Public License
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
-* Created on 2018/02/28 at 19:50:24 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 18:50:01 by Benoit Hivert <hivert.benoit@gmail.com>
+* Created on 2018/03/03 at 00:17:02 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/08 at 18:29:07 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
-#ifndef FLIST_H
-# define FLIST_H
+#ifndef BNODE_H
+# define BNODE_H
 
-# include <stdlib.h>
-
-typedef struct _node_t	node_t;
-typedef struct	_flist_t {
-	size_t	size;
-	node_t	*head;
-	node_t	*tail;
-} flist_t;
-
-// flist utils
-void	flist_clear(flist_t *);
-size_t	flist_size(flist_t *);
-// flist handling
-node_t	*flist_popFront(flist_t *);
-void	flist_pushFront(flist_t *, node_t *);
-void	flist_pushBack(flist_t *, node_t *);
-// flist iterators
-node_t	*flist_begin(flist_t *);
-node_t	*flist_end(flist_t *);
-node_t	*flist_next(node_t *);
-void	flist_iter(flist_t *, void (*)(node_t *));
+typedef struct _bnode_t {
+	struct _bnode_t	*ptr[2];
+} bnode_t;
 
 #endif

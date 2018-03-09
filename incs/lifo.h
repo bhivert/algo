@@ -16,18 +16,19 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/03/07 at 01:21:02 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 18:53:06 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/09 at 00:06:08 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef LIFO_H
 # define LIFO_H
 
+# include "node.h"
 # include <stdlib.h>
 
-typedef struct _node_t	node_t;
 typedef struct _lifo_t	{
 	size_t	size;
 	node_t	*head;
+	node_t	sentinel;
 } lifo_t;
 
 // lifo utils

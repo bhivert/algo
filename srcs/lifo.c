@@ -16,16 +16,15 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/03/07 at 01:19:36 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 17:54:09 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/09 at 00:07:26 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
-#include "node.h"
 #include "lifo.h"
 
 // lifo utils
 
 void	lifo_clear(lifo_t *lifo) {
-	*lifo = (lifo_t){0, NULL};
+	*lifo = (lifo_t){0, lifo_end(lifo), {lifo_end(lifo)}};
 }
 
 size_t	lifo_size(lifo_t *lifo) {
@@ -54,8 +53,7 @@ node_t	*lifo_begin(lifo_t *lifo) {
 }
 
 node_t	*lifo_end(lifo_t *lifo) {
-	(void)lifo;
-	return NULL;
+	return &lifo->sentinel;
 }
 
 node_t	*lifo_next(node_t *node) {

@@ -16,27 +16,28 @@
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
 * Created on 2018/03/06 at 23:58:41 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/07 at 18:51:48 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/08 at 23:27:44 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
 #ifndef FIFO_H
 # define FIFO_H
 
+# include "dlist.h"
 # include <stdlib.h>
 
-typedef struct _node_t	node_t;
-typedef struct _flist_t	fifo_t;
+typedef struct _dlist_t	fifo_t;
 
 // fifo utils
 void	fifo_clear(fifo_t *);
 size_t	fifo_size(fifo_t *);
 // fifo handling
-node_t	*fifo_pop(fifo_t *);
-void	fifo_push(fifo_t *, node_t *);
+bnode_t	*fifo_pop(fifo_t *);
+void	fifo_push(fifo_t *, bnode_t *);
 // fifo iterators
-node_t	*fifo_begin(fifo_t *);
-node_t	*fifo_end(fifo_t *);
-node_t	*fifo_next(node_t *);
-void	fifo_iter(fifo_t *, void (*)(node_t *));
+bnode_t	*fifo_begin(fifo_t *);
+bnode_t	*fifo_end(fifo_t *);
+bnode_t	*fifo_prev(bnode_t *);
+bnode_t	*fifo_next(bnode_t *);
+void	fifo_iter(fifo_t *, void (*)(bnode_t *));
 
 #endif
