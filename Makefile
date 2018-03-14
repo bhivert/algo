@@ -15,14 +15,14 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this project. If not, see <http://www.gnu.org/licenses/>
 #
-# Created on 2018/02/28 at 19:56:53 by Benoit Hivert <hivert.benoit@gmail.com>
-# Updated on 2018/03/08 at 23:26:39 by Benoit Hivert <hivert.benoit@gmail.com>
+# Created on 2018/03/14 at 01:04:03 by Benoit Hivert <hivert.benoit@gmail.com>
+# Updated on 2018/03/14 at 02:17:48 by Benoit Hivert <hivert.benoit@gmail.com>
 ##
 
 .PHONY: all, clean, fclean, re, _make, _make_clean, _make_fclean
 .SUFFIXES:
 
-NAME		=	libcalgo.a
+NAME		=	libcutils.a
 
 DEBUG		=	0
 ifeq ($(DEBUG), 0)
@@ -39,18 +39,19 @@ LIBS_DIR	=
 
 LIBS		=	
 
-INCS_FLAGS	=	-Iincs \
+INCS_FLAGS	=	-Iincs/algo \
 
 SUB_MAKE	=	
 
-SRCS_DIR	=	srcs
-SRCS_SRCS	=	$(SRCS_DIR)/lifo.c \
-				$(SRCS_DIR)/fifo.c \
-				$(SRCS_DIR)/dlist.c \
+SRCS_ALGO_DIR	=	srcs/algo
+SRCS_ALGO_SRCS	=	$(SRCS_ALGO_DIR)/dlist.c \
+			$(SRCS_ALGO_DIR)/fifo.c \
+			$(SRCS_ALGO_DIR)/lifo.c \
 
-SRCS		=	$(SRCS_SRCS) \
+SRCS		=	$(SRCS_ALGO_SRCS) \
 
 OBJS		=	$(SRCS:.c=.o)
+
 
 all		:	_make $(NAME)
 

@@ -1,5 +1,5 @@
 /*
-* lifo.h is part of a project.
+* cutils.h is part of a project.
 * Copyright (C) 2018 Benoit Hivert <hivert.benoit@gmail.com>
 *
 * This project is free software: you can redistribute it and/or modify
@@ -15,32 +15,27 @@
 * You should have received a copy of the GNU Lesser General Public License
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
-* Created on 2018/03/07 at 01:21:02 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/09 at 00:06:08 by Benoit Hivert <hivert.benoit@gmail.com>
+* Created on 2018/03/14 at 01:23:05 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/14 at 04:35:36 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
-#ifndef LIFO_H
-# define LIFO_H
+#ifndef CUTILS_H
+# define CUTILS_H
 
-# include "node.h"
-# include <stdlib.h>
+/*!
+  @file cutils.h
+  @brief C data structure, algorithm and design pattern library
+  @mainpage
 
-typedef struct _lifo_t	{
-	size_t	size;
-	node_t	*head;
-	node_t	sentinel;
-} lifo_t;
+  @section Description
 
-// lifo utils
-void	lifo_clear(lifo_t *);
-size_t	lifo_size(lifo_t *);
-// lifo handling
-node_t	*lifo_pop(lifo_t *);
-void	lifo_push(lifo_t *, node_t *);
-// lifo iterators
-node_t	*lifo_begin(lifo_t *);
-node_t	*lifo_end(lifo_t *);
-node_t	*lifo_next(node_t *);
-void	lifo_iter(lifo_t *, void (*)(node_t *));
+  @section Compilation
+
+  @warning Improper use can crash your application
+  */
+
+#include "algo/lifo.h"
+#include "algo/dlist.h"
+#include "algo/fifo.h"
 
 #endif

@@ -1,5 +1,5 @@
 /*
-* bnode.h is part of a project.
+* node.h is part of a project.
 * Copyright (C) 2018 Benoit Hivert <hivert.benoit@gmail.com>
 *
 * This project is free software: you can redistribute it and/or modify
@@ -15,15 +15,21 @@
 * You should have received a copy of the GNU Lesser General Public License
 * along with this project. If not, see <http://www.gnu.org/licenses/>
 *
-* Created on 2018/03/03 at 00:17:02 by Benoit Hivert <hivert.benoit@gmail.com>
-* Updated on 2018/03/08 at 18:29:07 by Benoit Hivert <hivert.benoit@gmail.com>
+* Created on 2018/02/28 at 20:16:43 by Benoit Hivert <hivert.benoit@gmail.com>
+* Updated on 2018/03/14 at 00:19:15 by Benoit Hivert <hivert.benoit@gmail.com>
 */
 
-#ifndef BNODE_H
-# define BNODE_H
+/*!
+  @file node.h
+  @brief unary Node data structure
+  @struct node_t
+  */
 
-typedef struct _bnode_t {
-	struct _bnode_t	*ptr[2];
-} bnode_t;
+#ifndef NODE_H
+# define NODE_H
+
+typedef struct	_node_t {
+	struct _node_t	*ptr;
+} node_t;
 
 #endif
